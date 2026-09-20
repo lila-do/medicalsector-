@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health Care Services – Digital Guide for Vocational School Students</title>
+<style>
+:root{
+  --ink:#153746;
+  --teal:#0f6f73;
+  --light:#eef7f7;
+  --accent:#f49b42;
+  --paper:#ffffff;
+  --muted:#5f7179;
+  --line:#d9e5e6;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f5f8f8;line-height:1.55}
+header{background:linear-gradient(135deg,#0d5663,#13969b);color:white;padding:34px 20px 28px}
+header .wrap, main, footer .wrap{max-width:1100px;margin:auto}
+h1{margin:0 0 8px;font-size:clamp(2rem,5vw,3.4rem)}
+.subtitle{font-size:1.1rem;max-width:800px}
+.badge{display:inline-block;background:#fff;color:#0f6f73;padding:5px 10px;border-radius:999px;font-weight:700;margin-bottom:10px}
+nav{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--line);padding:9px 12px;overflow:auto;white-space:nowrap}
+nav a{display:inline-block;margin:2px 5px;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--teal);font-weight:700}
+nav a:hover{background:var(--light)}
+main{padding:24px 18px 50px}
+section{background:var(--paper);margin:0 0 22px;padding:24px;border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+h2{color:var(--teal);margin-top:0;font-size:1.7rem}
+h3{margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fff}
+.card h3{color:var(--teal)}
+.gr{background:#f8fbfb;border-left:4px solid var(--accent);padding:10px 12px;margin-top:10px;border-radius:6px}
+.ex{background:#f2f7fc;border-left:4px solid #5a8ec7;padding:10px 12px;margin-top:10px;border-radius:6px}
+.kicker{font-size:.83rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top;text-align:left}
+th{background:#eff7f7;color:var(--teal)}
+details{border:1px solid var(--line);border-radius:10px;margin:9px 0;padding:10px 12px;background:#fff}
+summary{cursor:pointer;font-weight:700;color:var(--teal)}
+.pill{display:inline-block;background:#e8f4f4;color:var(--teal);padding:3px 8px;border-radius:999px;font-size:.87rem;margin:2px}
+.tip{background:#fff8ef;border:1px solid #f6d2a7;border-radius:12px;padding:14px}
+.check{background:#eef8f0;border:1px solid #cde7d2;border-radius:12px;padding:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.two{grid-template-columns:1fr} section{padding:18px}}
+button{background:var(--teal);color:white;border:0;border-radius:9px;padding:9px 13px;font-weight:700;cursor:pointer}
+button:hover{opacity:.92}
+.answer{display:none;margin-top:8px;padding:10px;border-radius:8px;background:#f0f7f7}
+footer{background:#173845;color:white;padding:22px 18px}
+footer p{margin:4px 0}
+.small{font-size:.9rem;color:var(--muted)}
+@media print{
+ nav,button{display:none!important}
+ body{background:white}
+ section{box-shadow:none;break-inside:avoid}
+}
+</style>
+<script>
+function toggleAnswer(id){
+  const el=document.getElementById(id);
+  el.style.display=(el.style.display==='block')?'none':'block';
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="badge">Vocational English • Health Care Sector</div>
+    <h1>Health Care Services</h1>
+    <div class="subtitle">A bilingual digital guide to hospital services, departments, health professionals, common procedures and essential English vocabulary.</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#overview">Health Care</a>
+  <a href="#places">Where?</a>
+  <a href="#people">Who?</a>
+  <a href="#departments">Departments</a>
+  <a href="#procedures">Procedures</a>
+  <a href="#vocabulary">Vocabulary</a>
+  <a href="#communication">Communication</a>
+  <a href="#mindmap">Mind Map</a>
+  <a href="#check">Self-check</a>
+</nav>
+
+<main>
+<section id="overview">
+  <div class="kicker">1. Basic Information</div>
+  <h2>What are Health Care Services?</h2>
+  <p><strong>Health care services</strong> are services provided to protect, improve or restore a person’s health. They may include prevention, diagnosis, treatment, emergency care, surgery, rehabilitation, mental health support and patient education.</p>
+  <div class="gr"><strong>Στα ελληνικά:</strong> Οι υπηρεσίες υγείας είναι οι υπηρεσίες που παρέχονται για την πρόληψη, τη διάγνωση, τη θεραπεία και την αποκατάσταση της υγείας ενός ατόμου. Μπορεί να παρέχονται σε νοσοκομεία, κέντρα υγείας, ιατρεία, εργαστήρια, μονάδες αποκατάστασης ή ακόμη και στο σπίτι.</div>
+  <div class="grid" style="margin-top:16px">
+    <div class="card"><h3>Prevention</h3><p>Vaccination, screening, health education and regular check-ups.</p><div class="gr">Πρόληψη: εμβολιασμοί, προληπτικός έλεγχος, ενημέρωση και τακτικές εξετάσεις.</div></div>
+    <div class="card"><h3>Diagnosis</h3><p>Finding out what disease, injury or condition a patient has.</p><div class="gr">Διάγνωση: εντοπισμός της πάθησης ή του προβλήματος υγείας.</div></div>
+    <div class="card"><h3>Treatment</h3><p>Medication, surgery, therapy or other medical care used to help a patient recover.</p><div class="gr">Θεραπεία: φάρμακα, χειρουργική επέμβαση, θεραπευτικές παρεμβάσεις.</div></div>
+    <div class="card"><h3>Rehabilitation</h3><p>Helping a patient regain movement, strength, independence and quality of life.</p><div class="gr">Αποκατάσταση: επανάκτηση κίνησης, δύναμης και λειτουργικότητας.</div></div>
+  </div>
+</section>
+
+<section id="places">
+  <div class="kicker">2. Where can care be provided?</div>
+  <h2>Health Care Institutions and Facilities</h2>
+  <table>
+    <tr><th>Place</th><th>Greek meaning</th><th>Typical services / facilities</th></tr>
+    <tr><td><strong>Hospital</strong></td><td>Νοσοκομείο</td><td>Emergency care, wards, operating theatres, laboratories, imaging units, specialist departments.</td></tr>
+    <tr><td><strong>Health centre</strong></td><td>Κέντρο Υγείας</td><td>Primary care, basic examinations, first aid, vaccinations, referrals.</td></tr>
+    <tr><td><strong>Clinic</strong></td><td>Κλινική / Ιατρείο</td><td>Specialist medical care, examinations and minor procedures.</td></tr>
+    <tr><td><strong>Diagnostic laboratory</strong></td><td>Διαγνωστικό εργαστήριο</td><td>Blood tests, microbiology, haematology and other laboratory tests.</td></tr>
+    <tr><td><strong>Imaging centre</strong></td><td>Διαγνωστικό κέντρο απεικόνισης</td><td>X-ray, ultrasound, CT, MRI and other imaging techniques.</td></tr>
+    <tr><td><strong>Rehabilitation centre</strong></td><td>Κέντρο αποκατάστασης</td><td>Physiotherapy, mobility training, exercise therapy and support.</td></tr>
+    <tr><td><strong>Pharmacy</strong></td><td>Φαρμακείο</td><td>Medicines, prescriptions and advice on safe medication use.</td></tr>
+    <tr><td><strong>Home care</strong></td><td>Κατ’ οίκον φροντίδα</td><td>Nursing care, wound care, medication support and monitoring.</td></tr>
+  </table>
+</section>
+
+<section id="people">
+  <div class="kicker">3. Who provides the services?</div>
+  <h2>Health Care Professionals</h2>
+  <div class="grid">
+    <div class="card"><h3>Doctor / Physician</h3><p>Examines patients, makes a diagnosis and recommends treatment.</p><div class="gr"><strong>Γιατρός:</strong> εξετάζει τον ασθενή, κάνει διάγνωση και προτείνει θεραπεία.</div></div>
+    <div class="card"><h3>Nurse</h3><p>Provides direct patient care, gives medication, checks vital signs and dresses wounds.</p><div class="gr"><strong>Νοσηλευτής/τρια:</strong> παρέχει άμεση φροντίδα, χορηγεί φάρμακα, μετρά ζωτικά σημεία και περιποιείται τραύματα.</div></div>
+    <div class="card"><h3>Paramedic</h3><p>Provides emergency care before and during transport to hospital.</p><div class="gr"><strong>Διασώστης/τρια:</strong> παρέχει επείγουσα προνοσοκομειακή φροντίδα.</div></div>
+    <div class="card"><h3>Radiographer / Radiologic technologist</h3><p>Performs medical imaging examinations.</p><div class="gr"><strong>Τεχνολόγος ακτινολογίας:</strong> πραγματοποιεί εξετάσεις ιατρικής απεικόνισης.</div></div>
+    <div class="card"><h3>Physiotherapist</h3><p>Uses exercise, movement and physical techniques to improve mobility and function.</p><div class="gr"><strong>Φυσικοθεραπευτής/τρια:</strong> βοηθά στη βελτίωση της κίνησης και της λειτουργικότητας.</div></div>
+    <div class="card"><h3>Laboratory technician</h3><p>Analyses blood, tissue and other specimens.</p><div class="gr"><strong>Εργαστηριακός τεχνικός:</strong> αναλύει αίμα και άλλα βιολογικά δείγματα.</div></div>
+    <div class="card"><h3>Pharmacist</h3><p>Dispenses medication and explains safe use.</p><div class="gr"><strong>Φαρμακοποιός:</strong> εκτελεί συνταγές και δίνει οδηγίες για σωστή χρήση φαρμάκων.</div></div>
+    <div class="card"><h3>Psychologist / Therapist</h3><p>Supports mental health and helps patients manage emotional or behavioural difficulties.</p><div class="gr"><strong>Ψυχολόγος / θεραπευτής:</strong> παρέχει υποστήριξη για ζητήματα ψυχικής υγείας.</div></div>
+  </div>
+</section>
+
+<section id="departments">
+  <div class="kicker">4. Inside the Hospital</div>
+  <h2>Major Hospital Departments</h2>
+
+  <details open>
+    <summary>Accident & Emergency (A&amp;E) / Casualty Department — Τμήμα Επειγόντων Περιστατικών</summary>
+    <p>A medical treatment facility for patients who need <strong>urgent or emergency care</strong> and often arrive without an appointment, either on their own or by ambulance. It treats a wide range of illnesses and injuries, including life-threatening conditions. It normally operates 24 hours a day.</p>
+    <div class="ex"><strong>Example:</strong> The patient was taken to the A&amp;E department after a serious road accident.</div>
+  </details>
+
+  <details>
+    <summary>General Surgery / Endoscopic Surgery — Γενική Χειρουργική / Ενδοσκοπική Χειρουργική</summary>
+    <p>Surgery uses operative techniques to investigate or treat disease, injury or other conditions. It may repair damaged tissue, remove diseased tissue or improve bodily function.</p>
+    <div class="gr">Η χειρουργική χρησιμοποιεί επεμβατικές τεχνικές για διάγνωση ή θεραπεία παθήσεων και τραυματισμών.</div>
+  </details>
+
+  <details>
+    <summary>Anaesthetics — Αναισθησιολογικό</summary>
+    <p>Anaesthesia allows medical procedures to be carried out without pain.</p>
+    <p><span class="pill">General anaesthesia</span> unconsciousness and complete loss of sensation.</p>
+    <p><span class="pill">Sedation</span> reduces anxiety and awareness without necessarily causing unconsciousness.</p>
+    <p><span class="pill">Regional / local anaesthesia</span> blocks sensation in a specific part of the body while the patient remains conscious.</p>
+  </details>
+
+  <details>
+    <summary>Cardiology — Καρδιολογικό</summary>
+    <p>Deals with disorders of the heart and circulatory system, including heart failure and congenital heart defects.</p>
+    <div class="ex"><strong>Example:</strong> The cardiologist checked the patient’s pulse and blood pressure.</div>
+  </details>
+
+  <details>
+    <summary>Diagnostic Imaging / Radiology — Ακτινολογικό / Ιατρική Απεικόνιση</summary>
+    <p>Uses imaging methods to create pictures of the inside of the body for diagnosis and medical intervention.</p>
+    <p><span class="pill">X-ray</span><span class="pill">Ultrasound</span><span class="pill">CT</span><span class="pill">MRI</span><span class="pill">PET</span><span class="pill">Nuclear medicine</span></p>
+    <div class="gr">Χρησιμοποιεί τεχνικές όπως ακτινογραφία, υπέρηχο, αξονική και μαγνητική τομογραφία.</div>
+  </details>
+
+  <details>
+    <summary>Obstetrics &amp; Gynaecology — Μαιευτική και Γυναικολογία</summary>
+    <p><strong>Obstetrics</strong> covers pregnancy, childbirth and the postpartum period. <strong>Gynaecology</strong> focuses on the health of the female reproductive system.</p>
+  </details>
+
+  <details>
+    <summary>Haematology — Αιματολογικό</summary>
+    <p>Deals with blood diseases and may include a laboratory for haematological tests.</p>
+    <div class="ex"><strong>Example:</strong> A blood sample was sent to the haematology laboratory.</div>
+  </details>
+
+  <details>
+    <summary>Microbiology — Μικροβιολογικό</summary>
+    <p>A diagnostic laboratory dealing with bacteriology, mycology, parasitology, virology and mycobacteriology. It receives specimens from both in-patients and out-patients.</p>
+  </details>
+
+  <details>
+    <summary>Paediatrics — Παιδιατρικό</summary>
+    <p>Provides medical care for infants, children and adolescents.</p>
+  </details>
+
+  <details>
+    <summary>Physiotherapy (PT) — Φυσικοθεραπεία</summary>
+    <p>Helps improve mobility, function and quality of life through examination, diagnosis, exercise therapy, manual therapy, movement and patient education.</p>
+  </details>
+
+  <details>
+    <summary>Orthopaedics — Ορθοπαιδικό</summary>
+    <p>Deals with the musculoskeletal system: bones, joints, ligaments, tendons, muscles and nerves. Treatment may include medication, exercise, casting, surgery and rehabilitation.</p>
+  </details>
+
+  <details>
+    <summary>Neurology &amp; Psychiatry — Νευρολογικό και Ψυχιατρικό</summary>
+    <p>Neurology treats conditions involving the central and peripheral nervous systems. Psychiatry focuses on the diagnosis, prevention and treatment of mental disorders and difficulties involving mood, behaviour, cognition and perception.</p>
+  </details>
+</section>
+
+<section id="procedures">
+  <div class="kicker">5. Practical Health Care English</div>
+  <h2>Common Procedures and Actions</h2>
+  <div class="grid">
+    <div class="card"><h3>Dressing a wound</h3><div class="gr">Περιποίηση / αλλαγή επιδέσμου σε τραύμα.</div><div class="ex">The nurse is dressing the patient’s wound after cleaning it.</div></div>
+    <div class="card"><h3>Using a stethoscope</h3><div class="gr">Χρήση στηθοσκοπίου.</div><div class="ex">The doctor is using a stethoscope to listen to the patient’s lungs.</div></div>
+    <div class="card"><h3>Talking to a therapist</h3><div class="gr">Συζήτηση με θεραπευτή / ψυχολόγο.</div><div class="ex">The patient is talking to a therapist about stress and anxiety.</div></div>
+    <div class="card"><h3>Doing an abdominal ultrasound</h3><div class="gr">Διενέργεια υπερήχου κοιλίας.</div><div class="ex">The radiologist is doing an abdominal ultrasound to examine the liver.</div></div>
+    <div class="card"><h3>Preparing a prescription</h3><div class="gr">Σύνταξη / προετοιμασία ιατρικής συνταγής.</div><div class="ex">The doctor is preparing a prescription for antibiotics.</div></div>
+    <div class="card"><h3>Measuring pulse rate</h3><div class="gr">Μέτρηση σφυγμών / καρδιακού ρυθμού.</div><div class="ex">The nurse is measuring the patient’s pulse rate.</div></div>
+    <div class="card"><h3>Examining a melanoma</h3><div class="gr">Εξέταση μελανώματος / ύποπτης δερματικής βλάβης.</div><div class="ex">The dermatologist is examining a melanoma carefully.</div></div>
+    <div class="card"><h3>Getting corneas checked</h3><div class="gr">Έλεγχος κερατοειδούς χιτώνα.</div><div class="ex">The patient is getting her corneas checked by an eye specialist.</div></div>
+    <div class="card"><h3>Measuring blood glucose level</h3><div class="gr">Μέτρηση επιπέδου γλυκόζης / σακχάρου στο αίμα.</div><div class="ex">The nurse is measuring the patient’s blood glucose level.</div></div>
+    <div class="card"><h3>Using a walker</h3><div class="gr">Χρήση περιπατητήρα / “Π”.</div><div class="ex">The patient is using a walker during rehabilitation.</div></div>
+    <div class="card"><h3>Giving an injection</h3><div class="gr">Χορήγηση ένεσης.</div><div class="ex">The nurse is giving the patient an injection.</div></div>
+    <div class="card"><h3>Checking blood pressure</h3><div class="gr">Μέτρηση αρτηριακής πίεσης.</div><div class="ex">The nurse is checking the patient’s blood pressure.</div></div>
+  </div>
+</section>
+
+<section id="vocabulary">
+  <div class="kicker">6. Essential Vocabulary</div>
+  <h2>Useful Words from the Text</h2>
+  <table>
+    <tr><th>English</th><th>Greek</th><th>Example</th></tr>
+    <tr><td>appointment</td><td>ραντεβού</td><td>I have an appointment with the cardiologist at 10 a.m.</td></tr>
+    <tr><td>ambulance</td><td>ασθενοφόρο</td><td>The ambulance arrived within a few minutes.</td></tr>
+    <tr><td>injury</td><td>τραυματισμός</td><td>The patient has a knee injury.</td></tr>
+    <tr><td>life-threatening</td><td>απειλητικός για τη ζωή</td><td>A severe allergic reaction can be life-threatening.</td></tr>
+    <tr><td>diagnosis</td><td>διάγνωση</td><td>The doctor made a diagnosis after the examination.</td></tr>
+    <tr><td>treatment</td><td>θεραπεία</td><td>The patient responded well to treatment.</td></tr>
+    <tr><td>specimen</td><td>βιολογικό δείγμα</td><td>The laboratory received a blood specimen.</td></tr>
+    <tr><td>in-patient</td><td>νοσηλευόμενος ασθενής</td><td>The in-patient stayed in hospital for three days.</td></tr>
+    <tr><td>out-patient</td><td>εξωτερικός ασθενής</td><td>The out-patient returned home after the examination.</td></tr>
+    <tr><td>ward</td><td>θάλαμος / νοσηλευτική μονάδα</td><td>She works in the surgical ward.</td></tr>
+    <tr><td>operating theatre</td><td>χειρουργική αίθουσα</td><td>The patient was taken to the operating theatre.</td></tr>
+    <tr><td>conscious</td><td>έχοντας τις αισθήσεις του</td><td>The patient remained conscious during local anaesthesia.</td></tr>
+    <tr><td>unconscious</td><td>αναίσθητος</td><td>General anaesthesia makes the patient unconscious.</td></tr>
+    <tr><td>sedation</td><td>καταστολή</td><td>Mild sedation helped the patient relax.</td></tr>
+    <tr><td>circulatory system</td><td>κυκλοφορικό σύστημα</td><td>The heart is part of the circulatory system.</td></tr>
+    <tr><td>mobility</td><td>κινητικότητα</td><td>Physiotherapy can improve mobility.</td></tr>
+    <tr><td>rehabilitation</td><td>αποκατάσταση</td><td>Rehabilitation helped him walk independently again.</td></tr>
+    <tr><td>congenital</td><td>συγγενής</td><td>The baby was born with a congenital heart condition.</td></tr>
+    <tr><td>musculoskeletal system</td><td>μυοσκελετικό σύστημα</td><td>Orthopaedics focuses on the musculoskeletal system.</td></tr>
+    <tr><td>mental disorder</td><td>ψυχική διαταραχή</td><td>Psychiatrists diagnose and treat mental disorders.</td></tr>
+  </table>
+</section>
+
+<section id="communication">
+  <div class="kicker">7. Communication at Work</div>
+  <h2>Useful English for Health Care Settings</h2>
+  <div class="two">
+    <div>
+      <h3>Questions to a patient</h3>
+      <p>• How are you feeling today?</p>
+      <p>• Where does it hurt?</p>
+      <p>• How long have you had these symptoms?</p>
+      <p>• Are you allergic to any medication?</p>
+      <p>• Are you taking any medication at the moment?</p>
+      <p>• Have you had this problem before?</p>
+    </div>
+    <div>
+      <h3>Instructions to a patient</h3>
+      <p>• Please sit down and relax.</p>
+      <p>• Roll up your sleeve, please.</p>
+      <p>• Take a deep breath.</p>
+      <p>• Please lie on your back.</p>
+      <p>• Try not to move.</p>
+      <p>• Take this medication twice a day.</p>
+    </div>
+  </div>
+  <div class="tip" style="margin-top:16px"><strong>Professional tip:</strong> In health care English, clear and polite language is essential. Use simple instructions, check that the patient understands, and avoid unnecessary technical terms when speaking to patients.</div>
+</section>
+
+<section id="mindmap">
+  <div class="kicker">8. Group Work</div>
+  <h2>Create a Mind Map: Health Care Services</h2>
+  <p>Work in groups. You may use <strong>English and Greek</strong>. Try to include as much relevant information as possible.</p>
+  <div class="grid">
+    <div class="card"><h3>A. What services are provided?</h3><p>Emergency care, diagnosis, surgery, imaging, laboratory tests, medication, physiotherapy, rehabilitation, maternity care, paediatric care, mental health support, health education…</p></div>
+    <div class="card"><h3>B. Who provides them?</h3><p>Doctors, nurses, paramedics, radiographers, laboratory technicians, physiotherapists, pharmacists, psychologists, therapists and other health professionals.</p></div>
+    <div class="card"><h3>C. Where and with what facilities?</h3><p>Hospitals, clinics, health centres, laboratories, imaging centres, rehabilitation units, ambulances and home care. Think about equipment such as scanners, monitors, hospital beds, wheelchairs, walkers and laboratory equipment.</p></div>
+  </div>
+  <div class="check" style="margin-top:16px"><strong>Challenge:</strong> Add one branch called <em>“Patient journey”</em> and show what may happen from admission → diagnosis → treatment → rehabilitation → discharge.</div>
+</section>
+
+<section id="check">
+  <div class="kicker">9. Self-check</div>
+  <h2>Can you use the vocabulary?</h2>
+
+  <p><strong>1.</strong> Which department usually treats a patient with a broken leg?</p>
+  <button onclick="toggleAnswer('a1')">Show answer</button>
+  <div class="answer" id="a1">Orthopaedics.</div>
+
+  <p><strong>2.</strong> Which department uses MRI, CT and ultrasound?</p>
+  <button onclick="toggleAnswer('a2')">Show answer</button>
+  <div class="answer" id="a2">Diagnostic Imaging / Radiology.</div>
+
+  <p><strong>3.</strong> What is the difference between an in-patient and an out-patient?</p>
+  <button onclick="toggleAnswer('a3')">Show answer</button>
+  <div class="answer" id="a3">An in-patient is admitted to hospital and stays there; an out-patient receives care without staying overnight.</div>
+
+  <p><strong>4.</strong> Complete: “The nurse is ______ the patient’s blood pressure.”</p>
+  <button onclick="toggleAnswer('a4')">Show answer</button>
+  <div class="answer" id="a4">checking / measuring</div>
+
+  <p><strong>5.</strong> Why is physiotherapy important after some injuries or operations?</p>
+  <button onclick="toggleAnswer('a5')">Show answer</button>
+  <div class="answer" id="a5">It helps restore movement, strength, function and independence.</div>
+</section>
+
+<section>
+  <h2>Study Tip</h2>
+  <p>Learn health care vocabulary in <strong>groups of meaning</strong>, not as isolated words. For example:</p>
+  <p><span class="pill">Emergency</span> ambulance • A&amp;E • injury • urgent • life-threatening</p>
+  <p><span class="pill">Diagnosis</span> examination • blood test • specimen • X-ray • ultrasound • CT • MRI</p>
+  <p><span class="pill">Treatment</span> medication • injection • surgery • prescription • physiotherapy • rehabilitation</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Health Care Services – Digital Guide for Vocational School Students</strong></p>
+    <p>Prepared for educational use.</p>
+    <p><strong>Evangelia Domvrou - Teacher of English Language and Literature</strong></p>
+  </div>
+</footer>
+</body>
+</html>
