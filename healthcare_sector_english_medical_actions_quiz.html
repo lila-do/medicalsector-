@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Healthcare Sector English – Basic Medical Actions</title>
+<style>
+  :root{
+    --bg:#f4f8fb;
+    --panel:#ffffff;
+    --ink:#183242;
+    --muted:#607785;
+    --accent:#0d7f8c;
+    --accent2:#f28c28;
+    --ok:#238636;
+    --bad:#c73b3b;
+    --line:#d8e4ea;
+    --shadow:0 14px 34px rgba(24,50,66,.14);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+  body{overflow:hidden}
+  .app{height:100%;display:grid;grid-template-rows:auto 1fr auto}
+  header{
+    background:#0f5f68;color:white;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);z-index:3
+  }
+  header h1{margin:0;font-size:clamp(22px,2.4vw,38px);letter-spacing:.2px}
+  header .counter{font-weight:700;font-size:clamp(16px,1.4vw,22px);background:rgba(255,255,255,.13);padding:8px 14px;border-radius:999px}
+  main{position:relative;overflow:hidden}
+  .slide{position:absolute;inset:0;padding:28px 44px 24px;display:none;overflow:auto}
+  .slide.active{display:flex;align-items:center;justify-content:center}
+  .card{width:min(1180px,96%);background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:30px 36px}
+  h2{margin:0 0 18px;color:#0f5f68;font-size:clamp(28px,3vw,48px)}
+  h3{font-size:clamp(22px,2vw,30px);margin:16px 0 10px;color:#0f5f68}
+  p,li{font-size:clamp(18px,1.65vw,25px);line-height:1.48}
+  .lead{font-size:clamp(20px,1.8vw,28px);color:#2d4c5c}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .chip{background:#edf6f7;border:1px solid #cce4e7;border-radius:14px;padding:13px 14px;font-weight:700;font-size:clamp(16px,1.35vw,21px)}
+  .instructions{background:#fff7eb;border-left:6px solid var(--accent2);padding:14px 18px;border-radius:12px;margin:14px 0}
+  .reading{font-size:clamp(18px,1.46vw,23px);line-height:1.52;max-height:57vh;overflow:auto;padding-right:10px}
+  .question{font-size:clamp(23px,2.25vw,34px);font-weight:800;margin-bottom:22px}
+  .options{display:grid;gap:14px}
+  .option{width:100%;text-align:left;border:2px solid #bfd2db;background:#f8fbfc;padding:16px 18px;border-radius:16px;font-size:clamp(18px,1.7vw,25px);cursor:pointer;transition:.15s ease;color:var(--ink)}
+  .option:hover{transform:translateY(-1px);border-color:var(--accent);background:#eef8f9}
+  .option:disabled{cursor:default;opacity:1}
+  .option.correct{background:#e8f7ec;border-color:var(--ok);color:#175d26;font-weight:800}
+  .option.incorrect{background:#fdecec;border-color:var(--bad);color:#8c1f1f;font-weight:800}
+  .feedback{min-height:52px;margin-top:18px;font-size:clamp(18px,1.55vw,24px);font-weight:700;padding:10px 14px;border-radius:12px;display:none}
+  .feedback.show{display:block}
+  .feedback.good{background:#e8f7ec;color:#175d26}
+  .feedback.bad{background:#fdecec;color:#8c1f1f}
+  .navrow{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px}
+  .navbtn{border:none;border-radius:14px;padding:13px 20px;font-size:clamp(17px,1.4vw,22px);font-weight:800;cursor:pointer;background:#0f5f68;color:white}
+  .navbtn.secondary{background:#6f8792}
+  .navbtn:disabled{opacity:.4;cursor:not-allowed}
+  .scorebox{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+  .stat{background:#edf6f7;border-radius:16px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:clamp(30px,4vw,54px);color:#0f5f68}
+  .lesson-label{display:inline-block;background:#0f5f68;color:#fff;border-radius:999px;padding:8px 14px;font-weight:800;margin-bottom:12px}
+  .mini{font-size:clamp(15px,1.25vw,19px);color:var(--muted)}
+  footer{background:white;border-top:1px solid var(--line);padding:10px 18px;text-align:center;font-size:clamp(14px,1.1vw,18px);font-weight:700;color:#405d6b}
+  @media (max-width:850px){
+    .slide{padding:16px}
+    .card{padding:22px}
+    .two-col,.vocab-grid,.scorebox{grid-template-columns:1fr}
+    body{overflow:auto}.app{min-height:100%;height:auto}main{min-height:calc(100vh - 130px)}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <h1>Healthcare Sector English</h1>
+  <div class="counter" id="counter">Slide 1</div>
+</header>
+<main id="main"></main>
+<footer>Domvrou Evangelia - Teacher of English language and literature.</footer>
+</div>
+<script>
+const slides = [
+  {
+    type:'content',
+    html:`<span class="lesson-label">Two-lesson activity</span>
+      <h2>Basic Medical Actions</h2>
+      <p class="lead">Practice useful healthcare actions through reading, discussion and an interactive quiz.</p>
+      <div class="instructions"><b>Lesson 1:</b> vocabulary + reading + pair discussion. <b>Lesson 2:</b> comprehension and vocabulary quiz.</div>
+      <p class="mini">Use the arrow buttons to move through the activity. Quiz answers are checked automatically when selected.</p>`
+  },
+  {
+    type:'content',
+    html:`<span class="lesson-label">Lesson 1</span><h2>Vocabulary Warm-up</h2>
+      <p>Read the medical actions. In pairs, explain where each action could happen and who might perform it.</p>
+      <div class="vocab-grid">
+        <div class="chip">dressing a wound</div><div class="chip">using a stethoscope</div><div class="chip">talking to a therapist</div>
+        <div class="chip">doing an abdominal ultrasound</div><div class="chip">preparing a prescription</div><div class="chip">measuring pulse rate</div>
+        <div class="chip">examining a melanoma</div><div class="chip">getting corneas checked</div><div class="chip">measuring blood glucose level</div>
+        <div class="chip">using a walker</div><div class="chip">giving an injection</div><div class="chip">checking blood pressure</div>
+      </div>`
+  },
+  {
+    type:'content',
+    html:`<span class="lesson-label">Lesson 1</span><h2>Quick Classification</h2>
+      <div class="two-col">
+        <div><h3>Patient may receive / experience</h3><p>Examples: getting corneas checked, having blood pressure checked, talking to a therapist.</p></div>
+        <div><h3>Healthcare worker may perform</h3><p>Examples: dressing a wound, giving an injection, using a stethoscope, preparing a prescription.</p></div>
+      </div>
+      <div class="instructions"><b>Pair task:</b> Put all 12 actions into one or both groups. Then choose three actions and make short workplace sentences.</div>`
+  },
+  {
+    type:'content',
+    html:`<span class="lesson-label">Lesson 1</span><h2>Reading: A Busy Morning at Riverside Health Centre</h2>
+      <div class="reading">
+      <p>At 8:00 a.m., nurse Maria starts her shift at Riverside Health Centre. Her first patient is Mr Harris, who cut his hand while working in a garage. Maria cleans the cut and begins <b>dressing the wound</b>. Before he leaves, she also checks his temperature and starts <b>measuring his pulse rate</b>.</p>
+      <p>Next, Dr Patel sees a patient with chest discomfort. He is <b>using a stethoscope</b> to listen to the patient’s heart and lungs and then starts <b>checking blood pressure</b>. Because the patient has diabetes, the nurse is also <b>measuring the blood glucose level</b>. The doctor decides that the patient needs medicine and starts <b>preparing a prescription</b>.</p>
+      <p>In another room, a radiographer is <b>doing an abdominal ultrasound</b> for a woman with stomach pain. The scan helps the medical team see the organs inside her abdomen. Later, a dermatologist is <b>examining a melanoma</b> on another patient’s skin and explains why changes in size, colour or shape should be checked carefully.</p>
+      <p>At the eye clinic, an older patient is <b>getting her corneas checked</b>. Down the corridor, a physiotherapist helps Mr Lee practise <b>using a walker</b> safely after a hip operation. A nurse then visits the treatment room and is <b>giving an injection</b> to a patient who needs medication.</p>
+      <p>Before lunch, the final appointment is with a young man who has been feeling anxious for several weeks. He is <b>talking to a therapist</b> about his worries, sleep and daily routine. By midday, many different healthcare professionals have worked together, each carrying out a different medical action.</p>
+      </div>`
+  },
+  {
+    type:'content',
+    html:`<span class="lesson-label">Lesson 1</span><h2>After Reading</h2>
+      <div class="instructions"><b>Pair discussion (8–10 minutes):</b> Choose four people from the text. For each person, say: (1) what problem they have, (2) what medical action is carried out, and (3) which professional probably performs it.</div>
+      <h3>Speaking extension</h3>
+      <p>Student A is a healthcare worker. Student B is a patient. Make a short dialogue using at least three of the medical-action expressions.</p>`
+  }
+];
+
+const quiz = [
+  {section:'Comprehension 1/10',q:'Why does Mr Harris visit the health centre?',opts:['He has stomach pain.','He cut his hand at work.','He needs an eye test.','He feels anxious.'],a:1,exp:'Mr Harris cut his hand while working in a garage.'},
+  {section:'Comprehension 2/10',q:'What does Maria do after dressing Mr Harris’s wound?',opts:['She measures his pulse rate.','She checks his corneas.','She gives him a walker.','She performs an ultrasound.'],a:0,exp:'After dressing the wound, she begins measuring his pulse rate.'},
+  {section:'Comprehension 3/10',q:'Why does the nurse measure one patient’s blood glucose level?',opts:['Because the patient has diabetes.','Because the patient has a skin problem.','Because the patient has a hip injury.','Because the patient feels anxious.'],a:0,exp:'The text states that the patient has diabetes.'},
+  {section:'Comprehension 4/10',q:'What is the radiographer doing?',opts:['Giving an injection.','Doing an abdominal ultrasound.','Checking blood pressure.','Preparing a prescription.'],a:1,exp:'The radiographer performs an abdominal ultrasound.'},
+  {section:'Comprehension 5/10',q:'What is the dermatologist examining?',opts:['A wound.','A melanoma.','A cornea.','A broken bone.'],a:1,exp:'The dermatologist examines a melanoma on a patient’s skin.'},
+  {section:'Comprehension 6/10',q:'Where is an older patient having her eyes checked?',opts:['At the eye clinic.','In the treatment room.','At the garage.','In the physiotherapy room.'],a:0,exp:'She is at the eye clinic getting her corneas checked.'},
+  {section:'Comprehension 7/10',q:'Who helps Mr Lee use a walker?',opts:['A dermatologist.','A physiotherapist.','A therapist.','A pharmacist.'],a:1,exp:'A physiotherapist helps Mr Lee practise using a walker safely.'},
+  {section:'Comprehension 8/10',q:'Why is the young man talking to a therapist?',opts:['He has chest discomfort.','He has diabetes.','He has felt anxious for several weeks.','He has cut his hand.'],a:2,exp:'He talks about anxiety, sleep and his daily routine.'},
+  {section:'Comprehension 9/10',q:'What does Dr Patel use to listen to the patient’s heart and lungs?',opts:['A walker.','A stethoscope.','An ultrasound scanner.','A glucose meter only.'],a:1,exp:'A stethoscope is used to listen to the heart and lungs.'},
+  {section:'Comprehension 10/10',q:'What is the main idea of the text?',opts:['Only doctors work in healthcare.','Patients should avoid health centres.','Different healthcare professionals perform different medical actions.','All medical actions happen in the same room.'],a:2,exp:'The text shows several professionals performing different healthcare actions.'},
+
+  {section:'Vocabulary 1/10',q:'“Dressing a wound” means…',opts:['covering and treating an injury with suitable material.','listening to the lungs.','testing eyesight.','measuring sugar in the blood.'],a:0,exp:'To dress a wound means to clean/protect it and apply a suitable dressing.'},
+  {section:'Vocabulary 2/10',q:'Which action usually uses a device placed on the chest to listen to body sounds?',opts:['using a walker','using a stethoscope','giving an injection','getting corneas checked'],a:1,exp:'A stethoscope is used to listen to heart, lung and other body sounds.'},
+  {section:'Vocabulary 3/10',q:'Which phrase means “to test the pressure of blood in the arteries”?',opts:['checking blood pressure','measuring pulse rate','examining a melanoma','preparing a prescription'],a:0,exp:'Checking blood pressure measures the pressure of blood in the arteries.'},
+  {section:'Vocabulary 4/10',q:'Which action checks how fast the heart is beating?',opts:['measuring pulse rate','doing an abdominal ultrasound','dressing a wound','getting corneas checked'],a:0,exp:'Pulse rate tells us how many times the heart beats per minute.'},
+  {section:'Vocabulary 5/10',q:'Which action uses sound waves to produce images of organs in the abdomen?',opts:['doing an abdominal ultrasound','giving an injection','checking blood pressure','talking to a therapist'],a:0,exp:'An abdominal ultrasound uses sound waves to make images of structures inside the abdomen.'},
+  {section:'Vocabulary 6/10',q:'Which phrase is connected with testing the amount of sugar in the blood?',opts:['measuring blood glucose level','measuring pulse rate','examining a melanoma','using a walker'],a:0,exp:'Blood glucose level refers to the amount of glucose (sugar) in the blood.'},
+  {section:'Vocabulary 7/10',q:'A patient who needs support while walking may be…',opts:['using a walker.','preparing a prescription.','getting corneas checked.','using a stethoscope.'],a:0,exp:'A walker is a mobility aid that supports a person while walking.'},
+  {section:'Vocabulary 8/10',q:'Which action involves putting medicine into the body with a needle?',opts:['giving an injection','dressing a wound','talking to a therapist','checking blood pressure'],a:0,exp:'An injection delivers medicine through a needle.'},
+  {section:'Vocabulary 9/10',q:'Which action is most closely connected with skin cancer screening?',opts:['examining a melanoma','measuring pulse rate','preparing a prescription','using a walker'],a:0,exp:'A melanoma is a serious type of skin cancer, so suspicious skin lesions are examined carefully.'},
+  {section:'Vocabulary 10/10',q:'Which phrase means “writing or preparing an official order for medicine”?',opts:['preparing a prescription','doing an abdominal ultrasound','measuring blood glucose level','getting corneas checked'],a:0,exp:'A prescription is an official order for medicine or treatment.'}
+];
+
+quiz.forEach((item,i)=>slides.push({type:'quiz', ...item, quizIndex:i}));
+slides.push({type:'results'});
+
+let current=0;
+const answers=Array(quiz.length).fill(null);
+const main=document.getElementById('main');
+const counter=document.getElementById('counter');
+
+function render(){
+  main.innerHTML='';
+  slides.forEach((s,idx)=>{
+    const slide=document.createElement('section');
+    slide.className='slide'+(idx===current?' active':'');
+    const card=document.createElement('div');
+    card.className='card';
+
+    if(s.type==='content'){
+      card.innerHTML=s.html+navHTML(idx);
+    } else if(s.type==='quiz'){
+      const chosen=answers[s.quizIndex];
+      card.innerHTML=`<span class="lesson-label">Lesson 2 – ${s.section}</span>
+        <div class="question">${s.q}</div>
+        <div class="options">${s.opts.map((o,j)=>`<button class="option" data-q="${s.quizIndex}" data-a="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>
+        <div class="feedback" id="fb-${s.quizIndex}"></div>
+        ${navHTML(idx,true)}`;
+    } else if(s.type==='results'){
+      const score=answers.reduce((sum,v,i)=>sum+(v===quiz[i].a?1:0),0);
+      const comp=answers.slice(0,10).reduce((sum,v,i)=>sum+(v===quiz[i].a?1:0),0);
+      const voc=answers.slice(10).reduce((sum,v,i)=>sum+(v===quiz[i+10].a?1:0),0);
+      card.innerHTML=`<span class="lesson-label">Lesson 2 – Results</span><h2>Quiz Complete</h2>
+        <div class="scorebox"><div class="stat"><b>${score}/20</b>Total</div><div class="stat"><b>${comp}/10</b>Comprehension</div><div class="stat"><b>${voc}/10</b>Vocabulary</div></div>
+        <p class="lead">Review any questions you want, or restart the quiz for another attempt.</p>
+        <div class="navrow"><button class="navbtn secondary" onclick="go(-1)">← Previous</button><button class="navbtn" onclick="restartQuiz()">Restart quiz</button></div>`;
+    }
+    slide.appendChild(card);main.appendChild(slide);
+  });
+  counter.textContent=`Slide ${current+1} / ${slides.length}`;
+  attachQuizEvents();
+  restoreQuizState();
+}
+
+function navHTML(idx,quizSlide=false){
+  const nextDisabled = quizSlide && slides[idx].type==='quiz' && answers[slides[idx].quizIndex]===null ? 'disabled' : '';
+  return `<div class="navrow">
+    <button class="navbtn secondary" onclick="go(-1)" ${idx===0?'disabled':''}>← Previous</button>
+    <button class="navbtn" id="next-${idx}" onclick="go(1)" ${nextDisabled}>Next →</button>
+  </div>`;
+}
+
+function attachQuizEvents(){
+  document.querySelectorAll('.option').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const qi=Number(btn.dataset.q), ai=Number(btn.dataset.a);
+      if(answers[qi]!==null) return;
+      answers[qi]=ai;
+      const item=quiz[qi];
+      const all=[...document.querySelectorAll(`.option[data-q="${qi}"]`)];
+      all.forEach((b,j)=>{
+        b.disabled=true;
+        if(j===item.a) b.classList.add('correct');
+        if(j===ai && ai!==item.a) b.classList.add('incorrect');
+      });
+      const fb=document.getElementById(`fb-${qi}`);
+      if(ai===item.a){fb.className='feedback show good';fb.textContent='Correct! '+item.exp;}
+      else{fb.className='feedback show bad';fb.textContent='Not quite. '+item.exp;}
+      const next=document.getElementById(`next-${current}`); if(next) next.disabled=false;
+    });
+  });
+}
+
+function restoreQuizState(){
+  const s=slides[current];
+  if(!s || s.type!=='quiz') return;
+  const qi=s.quizIndex, chosen=answers[qi];
+  if(chosen===null) return;
+  const item=quiz[qi];
+  const all=[...document.querySelectorAll(`.option[data-q="${qi}"]`)];
+  all.forEach((b,j)=>{b.disabled=true;if(j===item.a)b.classList.add('correct');if(j===chosen&&chosen!==item.a)b.classList.add('incorrect');});
+  const fb=document.getElementById(`fb-${qi}`);
+  fb.className='feedback show '+(chosen===item.a?'good':'bad');
+  fb.textContent=(chosen===item.a?'Correct! ':'Not quite. ')+item.exp;
+}
+
+function go(delta){
+  const target=current+delta;
+  if(target<0||target>=slides.length)return;
+  current=target;render();
+}
+function restartQuiz(){
+  for(let i=0;i<answers.length;i++)answers[i]=null;
+  current=5;render();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft')go(-1);
+  if(e.key==='ArrowRight'){
+    const s=slides[current];
+    if(s.type!=='quiz'||answers[s.quizIndex]!==null)go(1);
+  }
+});
+render();
+</script>
+</body>
+</html>
